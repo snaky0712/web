@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en línea</title>
+    <link rel="stylesheet" href="style4.css">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor general */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos del header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        header img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Lista de productos */
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .product-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .product-list img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .remove-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .remove-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .add-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .add-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Resumen de compra */
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Botón de continuar */
+        .continue-button {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .continue-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Carrito */
+        .cart {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cart h3 {
+            margin-top: 0;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .product-list li {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .product-controls {
+                justify-content: center;
+            }
+
+            .summary {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabecera del sitio -->
+        <header>
+            <a href="index.html"><img src="Imagenes/casa.png" alt="Inicio"></a>
+            <img src="imagenes/carr.jpg" alt="Carrito" class="cart-icon">
+            <a href="index.html"><img src="Imagenes/flecha.jpeg" alt="Volver"></a>
+        </header>
+
+        <!-- Barra de navegación -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="categorias.html">Categorías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="acerca.html">Acerca de</a></li>
+            </ul>
+        </nav>
+
+        <!-- Lista de productos -->
+        <ul class="product-list">
+            <li>
+                <img src="Imagenes/alexa.jpeg" alt="TV">
+                <span>La mejor asistente</span>
+                <span>$6,000</span>
+                <div class="product-controls">
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="add-button" onclick="addToCart('La mejor asistente', 6000, this)">Agregar al carrito</button>
+                </div>
+            </li>
+            <li>
+                <img src="Imagenes/pila.jpeg" alt="Tableta">
+                <span>La más duradera</span>
+                <span>$1,500</span>
+                <div class="product-controls">
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="add-button" onclick="addToCart('La más duradera', 1500, this)">Agregar al carrito</button>
+                </div>
+            </li>
+            <li>
+                <img src="Imagenes/iphone 11.jpeg" alt="Celular">
+                <span>iPhone 11</span>
+                <span>$8,500</span>
+                <div class="product-controls">
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="add-button" onclick="addToCart('iPhone 11', 8500, this)">Agregar al carrito</button>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Resumen de la compra -->
+        <div class="summary">
+            <span>Total: $<span id="totalAmount">0</span></span>
+            <span>Productos: <span id="totalItems">0</span></span>
+        </div>
+
+        <!-- Sección del carrito -->
+        <div class="cart">
+            <h3>Carrito de Compras</h3>
+            <ul id="cartItemsList"></ul>
+        </div>
+
+        <!-- Botón de continuar -->
+        <a href="pago.html" class="continue-button">Continuar</a>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

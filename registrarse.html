@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+
+    <h1>Registro</h1>
+
+    <form>
+        <div class="campo">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div class="campo">
+            <label for="telefono">Número de teléfono:</label>
+            <input type="text" id="telefono" name="telefono">
+        </div>
+        <div class="campo">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo">
+        </div>
+        <div class="campo">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena">
+        </div>
+        <div class="campo">
+            <label for="metodo">Método de pago:</label>
+            <select id="metodo" name="metodo">
+                <option value="">Seleccionar</option>
+                <option value="tarjeta">Tarjeta de crédito</option>
+                <option value="paypal">PayPal</option>
+                <option value="transferencia">Transferencia bancaria</option>
+            </select>
+        </div>
+        <div class="campo">
+            <button type="submit">Registrarse para recibir ofertas</button>
+        </div>
+    </form>
+
+
+
+</body>
+</html>

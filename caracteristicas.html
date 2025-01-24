@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto: iPhone 13</title>
+    <link rel="stylesheet" href="style6.css">
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="image-gallery">
+            <div class="thumbnails">
+                <img src="Imagenes/angulo1.jpeg" alt="Ángulo 1" onclick="changeImage('Imagenes/angulo1.jpeg')">
+                <img src="Imagenes/angulo2.jpeg" alt="Ángulo 2" onclick="changeImage('Imagenes/angulo2.jpeg')">
+                <img src="Imagenes/angulo5.jpg" alt="Ángulo 3" onclick="changeImage('Imagenes/angulo5.jpg')">
+                <img src="Imagenes/angulo6.jpg" alt="Ángulo 4" onclick="changeImage('Imagenes/angulo6.jpg')">
+            </div>
+            
+            <div>
+                <img id="main-image" src="Imagenes/iphone14.jpg" alt="Imagen principal del iPhone" style="width: 400px; height: auto; object-fit: contain; border-radius: 10px; border: 2px solid #ccc;">
+            </div>
+        </div>
+
+        
+        <div class="product-details">
+            <h1>Apple iPhone 11 (128GB) Rojo</h1>
+            <p><strong>$8,500</strong></p>
+            <p><del>$10,000</del></p>
+
+            <div class="storage-options">
+                <p>Memoria interna:</p>
+                <button>128GB</button>
+                <button>256GB</button>
+                <button>512GB</button>
+            </div>
+
+            <div class="actions">
+                <button>Comprar</button>
+             <a href="agcar.html"><button>  Agregar al carrito </button></a>
+                
+               
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Síguenos en: <strong>techshop.com</strong>
+    </footer>
+
+</body>
+</html>

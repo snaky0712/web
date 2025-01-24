@@ -1,0 +1,98 @@
+.search-bar {
+    display: inline-block;
+    position: relative;
+    width: 100%; /* Se adapta al tamaño de la pantalla */
+    max-width: 400px;
+    vertical-align: middle;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #0414c4;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #0077cc;
+    outline: none;
+}
+
+.search-bar button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #0414c4;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.search-bar button:hover {
+    color: #0077cc;
+}
+
+.contenedor-productos {
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+header {
+    background-color: #4ca8af; 
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d0f0f5;
+}
+
+nav a img {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.icono-pequeno {
+    width: 24px;
+    height: 24px;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.producto img:hover {
+    transform: scale(1.05);
+}

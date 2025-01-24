@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuMercadoOnline - Ayuda al Cliente</title>
+    
+</head>
+<body>
+    <div class="nav">
+        <h1 onclick="toggleSideNav()">tiendasjala 📦</h1>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="ayuda.php">Ayuda al Cliente</a></li>
+            <li><a href="loginV.php">Empieza a vender</a></li>
+            <li><a href="sesion_vistas.php" onclick="navigateTo(event, 'sesion_vistas.php')">Inicia Sesion</a></li>
+        </ul>
+    </div>
+
+    <div class="side-nav" id="side-nav">
+        <div>
+            <h1>Ayuda</h1>
+            <ul>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#faq">Preguntas Frecuentes</a></li>
+                <li><a href="#envios">Envíos</a></li>
+                <li><a href="#devoluciones">Devoluciones</a></li>
+                <li><a href="#comentarios">Enviar Comentarios</a></li>
+                <li><a href="#tutoriales">Guías y Tutoriales</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content" id="contacto">
+            <h2>Contacto</h2>
+            <p>Si necesitas asistencia, puedes contactarnos a través de los siguientes medios:</p>
+            <p>Email: soporte@tiendasjala.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+            <p>Horario de atención: Lunes a Viernes, de 9:00 a 18:00</p>
+        </div>
+
+        <div class="content" id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq">
+                <h3>¿Cómo puedo rastrear mi pedido?</h3>
+                <p>Puedes rastrear tu pedido ingresando el número de seguimiento en la sección "Rastrear Pedido" en nuestro sitio web.</p>
+            </div>
+            <div class="faq">
+                <h3>¿Cuáles son los métodos de pago disponibles?</h3>
+                <p>Aceptamos tarjetas de crédito, PayPal y transferencias bancarias.</p>
+            </div>
+            <div class="faq">
+                <h3>¿Cómo puedo devolver un producto?</h3>
+                <p>Para devolver un producto, por favor visita nuestra sección de "Devoluciones" y sigue las instrucciones proporcionadas.</p>
+            </div>
+            <div class="faq">
+                <h3>¿Puedo cambiar mi dirección de envío?</h3>
+                <p>Sí, puedes cambiar tu dirección de envío antes de que tu pedido sea enviado. Contacta a nuestro equipo de soporte para más asistencia.</p>
+            </div>
+        </div>
+
+        <div class="content" id="envios">
+            <h2>Envíos</h2>
+            <p>Ofrecemos envíos a nivel nacional e internacional. Los tiempos de entrega pueden variar según la ubicación.</p>
+            <p>Para más detalles sobre nuestros métodos de envío y tarifas, por favor visita nuestra sección de Envíos.</p>
+        </div>
+
+        <div class="content" id="comentarios">
+            <h2>Enviar Comentarios</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Email" required>
+                <textarea name="message" placeholder="Tu Comentario" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="content" id="tutoriales">
+            <h2>Guías y Tutoriales</h2>
+            <p>Explora nuestras guías y tutoriales para obtener el máximo provecho de tu experiencia en tiendasjala:</p>
+            <ul>
+                <li><a href="#">Cómo Comprar en jalatiendas</a></li>
+                <li><a href="#">Consejos para Seguridad en Línea</a></li>
+                <li><a href="#">Preguntas Frecuentes sobre Envíos</a></li>
+            </ul>
+        </div>
+    </div>
+
+   

@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+h1 {
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.campo input, .campo select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.pie {
+    margin-top: 20px;
+    font-size: 0.8em;
+    text-align: center;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chencho Abarrotes - Pago</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Pago</h2>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Dirección de Envío</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Método de Pago</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="payment-method" value="credit-card" required> Tarjeta de Crédito/Débito</label>
+                    <label><input type="radio" name="payment-method" value="paypal" required> PayPal</label>
+                    <label><input type="radio" name="payment-method" value="oxxo" required> OXXO</label>
+                    <label><input type="radio" name="payment-method" value="bank-transfer" required> Transferencia Bancaria</label>
+                </div>
+            </div>
+            <div id="credit-card-info" class="payment-info">
+                <div class="form-group">
+                    <label for="card-number">Número de Tarjeta</label>
+                    <input type="text" id="card-number" name="card-number">
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Fecha de Expiración</label>
+                    <input type="date" id="expiry-date" name="expiry-date">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="number" id="cvv" name="cvv">
+                </div>
+            </div>
+            <div id="paypal-info" class="payment-info">
+                <div class="form-group">
+                    <label for="paypal-email">Correo Electrónico de PayPal</label>
+                    <input type="email" id="paypal-email" name="paypal-email">
+                </div>
+            </div>
+            <div id="oxxo-info" class="payment-info">
+                <div class="form-group">
+                    <p>Una vez que realices tu pedido, te enviaremos un código de barras para que puedas pagar en cualquier tienda OXXO. Dirígete a la tienda OXXO más cercana con este código y realiza tu pago en efectivo.</p>
+                    <div class="qr-code">
+                        <p>Escanea el siguiente código QR para obtener el número de referencia de pago:</p>
+                        <img src="imagenes/Qr.png" alt="Código QR OXXO">
+                    </div>
+                </div>
+            </div>
+            <div id="bank-transfer-info" class="payment-info">
+                <div class="form-group">
+                    <p>Para realizar la transferencia bancaria, utiliza la siguiente información:</p>
+                    <p>Banco: BBVA</p>
+                    <p>Número de cuenta: 1234567890</p>
+                    <p>CLABE: 012345678901234567</p>
+                    <p>Beneficiario: Chencho Abarrotes</p>
+                    <div class="qr-code">
+                        <p>Escanea el siguiente código QR para obtener los detalles de la cuenta bancaria:</p>
+                        <img src="imagenes/Qr.png" alt="Código QR Banco">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Confirmar Compra</button>
+        </form>
+        <div class="loading" id="loading">
+            <img src="imagenes/loading.gif" alt="Cargando...">
+            <p>Procesando tu pago...</p>
+        </div>
+        <div class="success-message" id="success-message">
+            <p>¡Pago Exitoso! Gracias por tu compra.</p>
+            <button onclick="window.location.href='formulario.php'">Inicio</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentMethods = document.querySelectorAll('input[name="payment-method"]');
+            const paymentInfo = document.querySelectorAll('.payment-info');
+            const form = document.getElementById('payment-form');
+            const loading = document.getElementById('loading');
+            const successMessage = document.getElementById('success-message');
+            
+            paymentMethods.forEach(method => {
+                method.addEventListener('change', function () {
+                    paymentInfo.forEach(info => info.style.display = 'none');
+                    const selectedPaymentInfo = document.getElementById(this.value + '-info');
+                    if (selectedPaymentInfo) {
+                        selectedPaymentInfo.style.display = 'block';
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                form.style.display = 'none';
+                loading.style.display = 'block';
+
+                
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }, 3000);
+            });
+
+            
+            paymentInfo.forEach(info => info.style.display = 'none');
+        });
+    </script>
+</body>
+</html>
